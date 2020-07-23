@@ -7,23 +7,17 @@ function generateTarget(){
   return Math.floor(Math.random()*9);
   
 }
-function compareGuesses(currentHumanGuess,computerGuess,target){
-  if(Math.abs(target - currentHumanGuess) < Math.abs(target - computerGuess)){
-  return true;
-
-}else if(Math.abs(target - currentHumanGuess) > Math.abs(target - computerGuess)){
-  return false;
-
-}else{
-    return true;
-}
+const compareGuesses = (humanGuess, computerGuess, targetGuess) => {
+  const humanDifference = Math.abs(targetGuess - humanGuess)
+  const computerDifference = Math.abs(targetGuess - computerGuess)
+  return humanDifference <= computerDifference;
 }
 
-function updateScore(winner) {
-  if(compareGuesses){
-    humanScore += 1;
-  }else{
-    computerScore +=1;
+const updateScore = winner => {
+  if (winner === 'human') {
+    humanScore++;
+  } else if (winner === 'computer') {
+    computerScore++;
   }
 }
 function advanceRound (){
