@@ -1,6 +1,8 @@
 let humanScore = 0;
 let computerScore = 0;
 let currentRoundNumber = 1;
+let matchHuman = 0;
+let matchPc = 0;
 
 // Write your code below:
 function generateTarget(){
@@ -15,13 +17,22 @@ const compareGuesses = (humanGuess, computerGuess, targetGuess) => {
 
 const updateScore = winner => {
   if (winner === 'human') {
-    humanScore++;
+    matchHuman++;
+    if (matchHuman === 5){
+      humanScore++;
+      matchHuman = 0;
+    } 
   } else if (winner === 'computer') {
-    computerScore++;
+    matchPc++;
+    if(matchPc === 5){
+      computerScore++;
+      matchPc = 0;
+    }
   }
 }
 function advanceRound (){
   currentRoundNumber +=1;
 }
+
 
 
