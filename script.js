@@ -7,15 +7,14 @@ function generateTarget(){
   return Math.floor(Math.random()*9);
   
 }
-function compareGuesses(humanGuessInput,computerGuessDisplay,target){
-  if(humanGuessInput === computerGuessDisplay){
-    return true;
-}
-  if(Math.abs(target - humanGuessInput) < Math.abs(target - computerGuessDisplay)){
+function compareGuesses(currentHumanGuess,computerGuess,target){
+  if(Math.abs(target - currentHumanGuess) < Math.abs(target - computerGuess)){
   return true;
-}else if(Math.abs(target - humanGuessInput) > Math.abs(target - computerGuessDisplay)){
+
+}else if(Math.abs(target - currentHumanGuess) > Math.abs(target - computerGuess)){
   return false;
-}else if(Math.abs(target - humanGuessInput) > Math.abs(target - computerGuessDisplay)){
+
+}else{
     return true;
 }
 }
