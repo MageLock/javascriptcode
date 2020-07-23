@@ -18,13 +18,13 @@ const compareGuesses = (humanGuess, computerGuess, targetGuess) => {
 const updateScore = winner => {
   if (winner === 'human') {
     matchHuman++;
-    if (matchHuman === 5){
+    if (matchHuman === 3){
       humanScore++;
       matchHuman = 0;
     } 
   } else if (winner === 'computer') {
     matchPc++;
-    if(matchPc === 5){
+    if(matchPc === 3){
       computerScore++;
       matchPc = 0;
     }
@@ -33,6 +33,5 @@ const updateScore = winner => {
 function advanceRound (){
   currentRoundNumber +=1;
 }
-
 
 
